@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+<title>Happy Birthday Kristine ✨</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+:root {
+    --card-bg-pastel: rgba(255, 255, 255, 0.45);
+    --text-main-pastel: #2d1b4e;
+    --text-muted-pastel: #624b7a;
+    --border-pastel: rgba(255, 255, 255, 0.5);
+    --glow-pastel: rgba(255, 117, 140, 0.2);
+    --gradient-body-pastel: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    --gradient-accent-pastel: linear-gradient(90deg, #ff758c, #ff7eb3, #8ec5fc);
+
+    /* Cosmic Theme */
+    --card-bg-cosmic: rgba(26, 11, 46, 0.7);
+    --text-main-cosmic: #f3e8ff;
+    --text-muted-cosmic: #c084fc;
+    --border-cosmic: rgba(142, 68, 173, 0.4);
+    --glow-cosmic: rgba(192, 132, 252, 0.35);
+    --gradient-body-cosmic: linear-gradient(135deg, #2e0854 0%, #110022 100%);
+    --gradient-accent-cosmic: linear-gradient(90deg, #a855f7, #ec4899, #6366f1);
+
+    /* Rose Gold Theme */
+    --card-bg-rose: rgba(255, 244, 245, 0.65);
+    --text-main-rose: #4a2834;
+    --text-muted-rose: #a26b7c;
+    --border-rose: rgba(255, 182, 193, 0.5);
+    --glow-rose: rgba(224, 141, 157, 0.3);
+    --gradient-body-rose: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
+    --gradient-accent-rose: linear-gradient(90deg, #fb6f92, #ff8fab, #ffe5ec);
+
+    /* Deep Dark Theme */
+    --card-bg-dark: rgba(15, 23, 42, 0.8);
+    --text-main-dark: #f8fafc;
+    --text-muted-dark: #94a3b8;
+    --border-dark: rgba(255, 255, 255, 0.1);
+    --glow-dark: rgba(59, 130, 246, 0.2);
+    --gradient-body-dark: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    --gradient-accent-dark: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+
+    /* Mappings */
+    --card-bg: var(--card-bg-pastel);
+    --text-main: var(--text-main-pastel);
+    --text-muted: var(--text-muted-pastel);
+    --border-color: var(--border-pastel);
+    --glow-shadow: var(--glow-pastel);
+    --body-bg: var(--gradient-body-pastel);
+    --accent-gradient: var(--gradient-accent-pastel);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--text-main);
+    background: var(--body-bg);
+    transition: background 0.8s cubic-bezier(0.25, 1, 0.5, 1), color 0.5s ease;
+}
+
+/* Glassmorphism Styling */
+.perspective-card-wrapper {
+    perspective: 1500px;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px) saturate(190%);
+    -webkit-backdrop-filter: blur(20px) saturate(190%);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 
+                inset 0 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: border-color 0.5s ease, background 0.5s ease, transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+
+/* Animations and Progressive Fills */
+.progress-fill {
+    background: var(--accent-gradient);
+    background-size: 200% auto;
+    animation: shineProgress 4s linear infinite;
+}
+
+@keyframes shineProgress {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.poem-display {
+    font-family: 'Caveat', cursive;
+}
+
+.pulse-gently {
+    animation: pulse-glow 3s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(1); box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+    100% { transform: scale(1.02); box-shadow: 0 0 20px var(--glow-shadow); }
+}
+
+/* Custom Scrollbar for inner boxes */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    opacity: 0.5;
+    border-radius: 99px;
+}
+
+.typewriter-cursor::after {
+    content: '|';
+    animation: blinkCursor 0.8s infinite;
+}
+@keyframes blinkCursor {
+    50% { opacity: 0; }
+}
+
+.balloon-hover:hover {
+    transform: scale(1.15) translateY(-8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-delay: 0s !important;
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body class="min-h-full flex flex-col justify-between overflow-x-hidden relative selection:bg-pink-400 selection:text-white">
+
+<canvas id="canvas-ambient" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+
+<header class="w-full z-20 px-3 sm:px-6 md:px-8 py-3 flex flex-nowrap justify-between items-center gap-2 bg-white/10 backdrop-blur-md border-b border-white/10">
+    <div class="flex items-center gap-1.5 min-w-0">
+        <span class="text-lg sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent truncate">Kristine ✨</span>
+        <span class="text-[9px] sm:text-xs font-semibold uppercase bg-pink-500/20 text-pink-700 dark:text-pink-300 px-1.5 sm:px-2 py-0.5 rounded-full whitespace-nowrap">Sweet 16</span>
+    </div>
+
+    <div class="flex items-center gap-1.5 text-sm shrink-0">
+        <!-- Interactive Theme Selection Switcher -->
+        <div class="relative group">
+            <button id="themeMenuBtn" aria-label="Select Color Preset" class="p-2 bg-white/20 hover:bg-white/30 rounded-lg sm:rounded-xl transition duration-200 text-current flex items-center gap-1 focus:ring-2 focus:ring-pink-500 text-xs sm:text-sm">
+                <i class="fa-solid fa-palette text-pink-600"></i>
+                <span class="hidden md:inline font-bold">Theme</span>
+            </button>
+            <div id="themeDropdown" class="hidden absolute right-0 mt-2 w-40 sm:w-48 bg-white/95 dark:bg-slate-900 rounded-xl sm:rounded-2xl shadow-2xl p-1.5 border border-black/5 flex-col gap-1 z-30">
+                <button data-theme="pastel" class="w-full text-left font-bold text-slate-800 dark:text-slate-200 px-2.5 py-1.5 rounded-lg hover:bg-pink-50/80 dark:hover:bg-pink-900/30 flex items-center justify-between text-[11px] sm:text-xs transition">
+                    <span>Sunrise Pastel</span><span class="w-3 h-3 rounded-full bg-gradient-to-r from-pink-200 to-blue-200 border"></span>
+                </button>
+                <button data-theme="cosmic" class="w-full text-left font-bold text-slate-800 dark:text-slate-200 px-2.5 py-1.5 rounded-lg hover:bg-pink-50/80 dark:hover:bg-pink-900/30 flex items-center justify-between text-[11px] sm:text-xs transition">
+                    <span>Cosmic Glow</span><span class="w-3 h-3 rounded-full bg-gradient-to-r from-purple-800 to-slate-900 border border-purple-500"></span>
+                </button>
+                <button data-theme="rose" class="w-full text-left font-bold text-slate-800 dark:text-slate-200 px-2.5 py-1.5 rounded-lg hover:bg-pink-50/80 dark:hover:bg-pink-900/30 flex items-center justify-between text-[11px] sm:text-xs transition">
+                    <span>Rose Gold</span><span class="w-3 h-3 rounded-full bg-gradient-to-r from-rose-200 to-rose-400 border"></span>
+                </button>
+                <button data-theme="dark" class="w-full text-left font-bold text-slate-800 dark:text-slate-200 px-2.5 py-1.5 rounded-lg hover:bg-pink-50/80 dark:hover:bg-pink-900/30 flex items-center justify-between text-[11px] sm:text-xs transition">
+                    <span>Deep Space</span><span class="w-3 h-3 rounded-full bg-gradient-to-r from-slate-800 to-slate-950 border border-slate-700"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Ambient Synthetic BGM Trigger -->
+        <button id="bgmToggleBtn" class="p-2 bg-white/20 hover:bg-white/30 rounded-lg sm:rounded-xl transition duration-200 text-current flex items-center gap-1 focus:ring-2 focus:ring-pink-500 text-xs sm:text-sm" aria-label="Toggle Background Celebration Chords">
+            <i class="fa-solid fa-volume-xmark text-slate-500" id="bgmIcon"></i>
+            <span class="hidden md:inline font-bold">Ambient BGM</span>
+        </button>
+
+        <!-- Accessibilities Trigger Button -->
+        <button id="accDrawerBtn" class="p-2 bg-white/20 hover:bg-white/30 rounded-lg sm:rounded-xl transition duration-200 text-current focus:ring-2 focus:ring-pink-500" aria-label="Accessibility Settings">
+            <i class="fa-solid fa-sliders"></i>
+        </button>
+    </div>
+</header>
+
+<aside id="accDrawer" class="hidden fixed right-2 sm:right-4 top-16 w-64 sm:w-72 bg-white/95 dark:bg-slate-950 border border-black/10 dark:border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-2xl z-40 text-xs sm:text-sm flex-col gap-4">
+    <div class="flex justify-between items-center border-b pb-2">
+        <h4 class="font-extrabold text-pink-600 flex items-center gap-1.5">
+            <i class="fa-solid fa-universal-access"></i> Settings Drawer
+        </h4>
+        <button id="closeAccBtn" class="p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-full"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="flex flex-col gap-3.5">
+        <!-- Text Typewriter Mode Switch -->
+        <label class="flex justify-between items-center cursor-pointer">
+            <span class="font-bold text-slate-700 dark:text-slate-300">Typewriter Effect</span>
+            <input type="checkbox" id="typewriterToggle" checked class="sr-only peer">
+            <span class="relative w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-pink-600"></span>
+        </label>
+        <!-- Motion Speed Optimization -->
+        <label class="flex justify-between items-center cursor-pointer">
+            <span class="font-bold text-slate-700 dark:text-slate-300">Reduced Motion</span>
+            <input type="checkbox" id="reducedMotionToggle" class="sr-only peer">
+            <span class="relative w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-pink-600"></span>
+        </label>
+        <div class="border-t pt-3">
+            <p class="text-[10px] text-slate-500 font-bold mb-1">Keyboard Controls:</p>
+            <p class="text-[10px] leading-relaxed text-slate-400">Press <kbd class="px-1 py-0.5 bg-slate-100 dark:bg-slate-800 border rounded font-mono">←</kbd> and <kbd class="px-1 py-0.5 bg-slate-100 dark:bg-slate-800 border rounded font-mono">→</kbd> keys to switch slides. Spacebar clicks choices.</p>
+        </div>
+    </div>
+</aside>
+
+<main class="flex-grow flex items-center justify-center p-3 sm:p-4 z-10 w-full relative min-h-[450px]">
+    <div class="experience-container perspective-card-wrapper w-full max-w-[580px] mx-auto">
+        <div id="master-card" class="experience-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-9 text-center relative shadow-2xl overflow-hidden transition-all duration-300 w-full">
+            
+            <!-- Top Milestone Tracker Header -->
+            <div class="flex items-center justify-between mb-4 sm:mb-6 text-[10px] sm:text-xs font-extrabold select-none">
+                <span class="text-pink-600 uppercase tracking-wider sm:tracking-widest flex items-center gap-1">
+                    <i class="fa-solid fa-award"></i>
+                    <span id="slideCounterLabel">Step 1 of 20</span>
+                </span>
+                <span class="text-slate-500 shrink-0" id="completionPercentageLabel">0% Complete</span>
+            </div>
+
+            <!-- Dynamic Elegant Progress Fill Track -->
+            <div class="progress-bar-container w-full h-1.5 sm:h-2.5 bg-slate-200 dark:bg-slate-700/60 rounded-full mb-5 sm:mb-8 overflow-hidden shadow-inner">
+                <div id="progress-indicator" class="progress-fill h-full w-[5%] rounded-full transition-all duration-500 ease-out"></div>
+            </div>
+
+            <!-- Focus Stage Content Container -->
+            <div id="slide-stage-content" class="min-h-[220px] sm:min-h-[280px] flex flex-col justify-center transition-all duration-300 w-full">
+                <!-- Content generated dynamically -->
+            </div>
+
+            <!-- Live Adaptive Reaction Notification Feedbox -->
+            <div id="interaction-feedback" class="mt-4 sm:mt-6 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/40 dark:bg-black/20 text-xs font-bold border border-white/20 text-pink-700 dark:text-pink-300 min-h-[38px] sm:min-h-[44px] flex items-center justify-center transition-all duration-200 opacity-0 transform scale-95 pointer-events-none w-full">
+                <!-- Adaptive responses populate here -->
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="w-full z-20 px-3 sm:px-6 md:px-8 py-3.5 flex flex-col sm:flex-row justify-between items-center gap-3.5 bg-white/15 backdrop-blur-md border-t border-white/10 select-none">
+    <div class="flex gap-2 w-full sm:w-auto">
+        <button id="prevBtn" class="flex-1 sm:flex-initial px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm bg-white/20 hover:bg-white/30 text-current disabled:opacity-40 disabled:cursor-not-allowed border border-white/20 transition-all flex items-center justify-center gap-1.5 focus:ring-2 focus:ring-pink-500">
+            <i class="fa-solid fa-arrow-left text-[10px] sm:text-xs"></i> Prev
+        </button>
+        <button id="nextBtn" class="flex-1 sm:flex-initial px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm bg-pink-600 hover:bg-pink-500 text-white shadow-lg shadow-pink-500/20 disabled:opacity-40 border border-transparent transition-all flex items-center justify-center gap-1.5 focus:ring-2 focus:ring-pink-500">
+            Next <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
+        </button>
+    </div>
+    
+    <div class="flex items-center gap-2.5 w-full sm:w-auto justify-center sm:justify-end">
+        <!-- Auto-Play Toggle Story Mode -->
+        <button id="autoplayBtn" class="px-3.5 sm:px-4 py-2 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-extrabold bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-1 focus:ring-2 focus:ring-pink-500 shrink-0" aria-label="Toggle story auto-play mode">
+            <i class="fa-solid fa-circle-play text-pink-600" id="autoplayIcon"></i>
+            <span>Auto Play</span>
+        </button>
+        <!-- Memory Reset Refresh Capsule -->
+        <button id="restartBtn" class="p-2 sm:px-3 py-2 rounded-lg sm:rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 text-[10px] sm:text-xs font-bold transition flex items-center gap-1 focus:ring-2 focus:ring-red-500 shrink-0" aria-label="Reset Experience Capsule">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <span>Reset</span>
+        </button>
+    </div>
+</footer>
+
+<script>
+class SoundSynthesizer {
+    constructor() {
+        this.ctx = null;
+        this.enabled = false;
+        this.bgmInterval = null;
+    }
+
+    init() {
+        if (!this.ctx) {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            this.ctx = new AudioContextClass();
+        }
+        this.enabled = true;
+        if (this.ctx.state === 'suspended') {
+            this.ctx.resume();
+        }
+    }
+
+    disable() {
+        this.enabled = false;
+    }
+
+    playTone(frequency, duration, type = 'sine', volume = 0.1) {
+        if (!this.enabled || !this.ctx) return;
+        
+        try {
+            const osc = this.ctx.createOscillator();
+            const gainNode = this.ctx.createGain();
+
+            osc.type = type;
+            osc.frequency.value = frequency;
+
+            gainNode.gain.setValueAtTime(0, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(volume, this.ctx.currentTime + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.00001, this.ctx.currentTime + duration);
+
+            osc.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+
+            osc.start(this.ctx.currentTime);
+            osc.stop(this.ctx.currentTime + duration);
+        } catch (e) {
+            console.warn("Synthesizer playback issue:", e);
+        }
+    }
+
+    playUnlockSound() {
+        this.playTone(349.23, 0.4, 'triangle', 0.08); // F4
+        setTimeout(() => this.playTone(523.25, 0.5, 'sine', 0.12), 100); // C5
+        setTimeout(() => this.playTone(698.46, 0.6, 'sine', 0.15), 200); // F5
+    }
+
+    playPopSound() {
+        if (!this.enabled || !this.ctx) return;
+        try {
+            const osc = this.ctx.createOscillator();
+            const gainNode = this.ctx.createGain();
+            
+            osc.frequency.setValueAtTime(300, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(80, this.ctx.currentTime + 0.12);
+            
+            gainNode.gain.setValueAtTime(0.15, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 0.12);
+            
+            osc.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+            
+            osc.start();
+            osc.stop(this.ctx.currentTime + 0.12);
+        } catch(e) {}
+    }
+
+    playArpeggio() {
+        const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50]; // C Major arpeggio
+        notes.forEach((freq, index) => {
+            setTimeout(() => {
+                this.playTone(freq, 0.45, 'sine', 0.07);
+            }, index * 90);
+        });
+    }
+
+    playBGMChords() {
+        if (!this.enabled || !this.ctx) return;
+        this.stopBGM();
+
+        const progression = [
+            [174.61, 220.00, 261.63], // F3 A3 C4
+            [261.63, 329.63, 392.00], // C4 E4 G4
+            [196.00, 246.94, 293.66], // G3 B3 D4
+            [220.00, 261.63, 329.63]  // A3 C4 E4
+        ];
+        
+        let bar = 0;
+        this.bgmInterval = setInterval(() => {
+            if (!this.enabled) return;
+            const chords = progression[bar % progression.length];
+            chords.forEach(note => {
+                this.playTone(note, 2.8, 'triangle', 0.03);
+            });
+            bar++;
+        }, 3000);
+    }
+
+    stopBGM() {
+        if (this.bgmInterval) {
+            clearInterval(this.bgmInterval);
+            this.bgmInterval = null;
+        }
+    }
+}
+
+const AudioController = new SoundSynthesizer();
+</script>
+
+<script>
+const SlideBlueprint = {
+    1: {
+        subtitle: "🌸 The Journey Begins",
+        title: "A Sweet 16 Digital Milestone",
+        buildHtml: () => `
+            <div class="flex flex-col items-center gap-4 sm:gap-6">
+                <button id="interactiveGiftBtn" aria-label="Pop the present box" class="gift-box text-6xl sm:text-7xl select-none outline-none transform transition duration-300 hover:scale-110 active:scale-95 animate-bounce">🎁</button>
+                <p class="text-xs sm:text-sm md:text-base leading-relaxed px-2 text-slate-700 dark:text-slate-200">
+                    Hello Kristine! Tap the gift box above to reveal some excitement, or confirm your entry into your sweet 16 interactive chronicle below.
+                </p>
+            </div>
+        `,
+        btn1: "Step Inside ✨",
+        btn2: "I'm Ready 🚀",
+        react1: "Welcome, Your Highness! Let the adventure unfold.",
+        react2: "Buckle up! This is not your average birthday card."
+    },
+    2: {
+        subtitle: "🔐 Access Validation",
+        title: "Calibrate Identity Matrix",
+        buildHtml: () => `
+            <div class="flex flex-col items-center gap-3 sm:gap-4 max-w-sm mx-auto w-full px-2">
+                <p class="text-[10px] sm:text-xs font-bold text-slate-500">Calibrating interactive system resonance frequencies...</p>
+                <input type="text" id="nameVerificationInput" class="w-full px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl border-2 border-slate-300 dark:border-slate-700 bg-white/45 dark:bg-black/30 font-bold text-center outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition text-xs sm:text-sm" value="${ExperienceState.userName}" placeholder="Please type your name...">
+                <p class="text-[10px] sm:text-[11px] text-slate-400">(Feel free to overwrite to authorize the platform!)</p>
+            </div>
+        `,
+        btn1: "Verify Signature 👑",
+        btn2: "Claim Birthday Magic 🍰",
+        react1: "Identity confirmed. Calibrating system components under your signature.",
+        react2: "Access granted! Birthday Code-16 is now running.",
+        onLeave: (choiceId) => {
+            const input = document.getElementById('nameVerificationInput');
+            if (input && input.value.trim() !== "") {
+                ExperienceState.userName = input.value.trim();
+                ExperienceState.save();
+            }
+        }
+    },
+    3: {
+        subtitle: "⚡ Aura Calibration",
+        title: "The Official Vibe Check",
+        buildHtml: () => `
+            <div class="flex flex-col items-center gap-4 sm:gap-5 w-full px-2">
+                <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300">How is your celebration energy profiling today on a scale of 1 to 10?</p>
+                <div class="w-full max-w-xs flex flex-col gap-2 mx-auto">
+                    <input type="range" id="vibeRangeSlider" min="1" max="10" value="10" class="w-full accent-pink-600 cursor-pointer h-1.5 sm:h-2 bg-slate-200 rounded-lg">
+                    <div class="flex justify-between text-[10px] sm:text-xs font-bold text-slate-400">
+                        <span>1 (Chillin')</span>
+                        <span id="currentVibeValue" class="text-pink-600">10 (Spectacular!)</span>
+                    </div>
+                </div>
+            </div>
+        `,
+        btn1: "11/10 Absolute Hype! 🎸",
+        btn2: "1000/10 Cosmic Queen 💅",
+        react1: "Unrivaled excitement detected! Overclocking processing units to accommodate your energy.",
+        react2: "An infinite matrix of sparkles and rainbows is being funneled to the browser."
+    },
+    4: {
+        subtitle: "🔮 Temporal Mechanics",
+        title: "The Legend of Sweet 16",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base leading-relaxed text-slate-600 dark:text-slate-300 px-1">
+                According to ancient digital laws, turning 16 instantly multiplies your capacity to conquer the universe by 200%. It also gives you temporary immunity from minor chores.
+            </p>
+        `,
+        btn1: "Activate Immunity 🛡️",
+        btn2: "Demand Real Cake Instead 🎂",
+        react1: "Immunity authorized. (Please check with domestic authorities for enforcement details).",
+        react2: "Slicing virtual slice coordinates. Prepared for sweet consumption."
+    },
+    5: {
+        subtitle: "🎨 Ambient Matrix",
+        title: "Select Color Aesthetic",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 mb-2 px-1">
+                Personalize your ambient environment. Which lighting dynamic reflects your styling vibes right now?
+            </p>
+            <div class="flex flex-wrap justify-center gap-1.5 mt-2 max-w-sm mx-auto">
+                <button data-palette="pastel" class="theme-select-pill px-3 py-1.5 rounded-lg text-[10px] sm:text-xs font-bold bg-white/40 dark:bg-slate-800 border-2 border-transparent hover:border-pink-500 transition">Pastel</button>
+                <button data-palette="cosmic" class="theme-select-pill px-3 py-1.5 rounded-lg text-[10px] sm:text-xs font-bold bg-white/40 dark:bg-slate-800 border-2 border-transparent hover:border-pink-500 transition">Cosmic</button>
+                <button data-palette="rose" class="theme-select-pill px-3 py-1.5 rounded-lg text-[10px] sm:text-xs font-bold bg-white/40 dark:bg-slate-800 border-2 border-transparent hover:border-pink-500 transition">Rose Gold</button>
+                <button data-palette="dark" class="theme-select-pill px-3 py-1.5 rounded-lg text-[10px] sm:text-xs font-bold bg-white/40 dark:bg-slate-800 border-2 border-transparent hover:border-pink-500 transition">Deep Space</button>
+            </div>
+        `,
+        btn1: "Lock Aesthetic in 🌸",
+        btn2: "Surprise Choice 🎲",
+        react1: "Perfect choice! Synchronizing aesthetic layers.",
+        react2: "Surprise aesthetic mapping active. Let's see how it looks!",
+        onLeave: (choiceId) => {
+            if (choiceId === 2) {
+                const palettes = ['pastel', 'cosmic', 'rose', 'dark'];
+                const random = palettes[Math.floor(Math.random() * palettes.length)];
+                setAestheticTheme(random);
+            }
+        }
+    },
+    6: {
+        subtitle: "🎯 Balloon Popper",
+        title: "The Birthday Balloon Event",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300">A celebratory entity has slipped into your timeline capsule! Pop it fast.</p>
+            <div class="flex justify-center py-2">
+                <div id="interactiveBalloon" class="balloon-hover text-5xl sm:text-6xl select-none cursor-pointer transform transition-transform duration-300 animate-bounce">🎈</div>
+            </div>
+        `,
+        btn1: "Pop It For Good Luck! 💥",
+        btn2: "Hug It Safely! 🤗",
+        react1: "POP! Infinite fortune, positive vibes, and confetti streams released!",
+        react2: "A heartwarming selection. Internal joy meters boosted to peak levels."
+    },
+    7: {
+        subtitle: "📊 Chrono Metrics",
+        title: "A Magnificent Lifetime Timeline",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 mb-3 px-1">By completing 16 orbits around the sun, you have successfully lived approximately:</p>
+            <div class="grid grid-cols-3 gap-2 w-full max-w-md mx-auto">
+                <div class="p-2 sm:p-3 rounded-xl bg-white/40 dark:bg-black/20 border border-white/20">
+                    <span class="block text-sm sm:text-lg md:text-xl font-extrabold text-pink-600">5,844</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-500 block leading-tight">Days of Shine</span>
+                </div>
+                <div class="p-2 sm:p-3 rounded-xl bg-white/40 dark:bg-black/20 border border-white/20">
+                    <span class="block text-sm sm:text-lg md:text-xl font-extrabold text-pink-600">140,256</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-500 block leading-tight">Hours of Spectacle</span>
+                </div>
+                <div class="p-2 sm:p-3 rounded-xl bg-white/40 dark:bg-black/20 border border-white/20">
+                    <span class="block text-sm sm:text-lg md:text-xl font-extrabold text-pink-600">Infinite</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-500 block leading-tight">Smiles Shared</span>
+                </div>
+            </div>
+        `,
+        btn1: "Wow, I am a Legend! 🦖",
+        btn2: "Keep Data Coming! 📈",
+        react1: "Correct. High-status legend profile tags have been updated.",
+        react2: "Processing more historical brilliance records."
+    },
+    8: {
+        subtitle: "🔮 Personality Matrix",
+        title: "Deep-Learning Vibe Analysis",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300">
+                Our birthday predictive engines have extracted your deep personality vectors. Click below to inspect.
+            </p>
+            <div class="mt-3 p-3 rounded-xl sm:rounded-2xl bg-white/40 dark:bg-black/20 border border-white/20 min-h-[48px] flex items-center justify-center font-bold text-[11px] sm:text-xs max-w-sm mx-auto" id="personalityOutputBox">
+                System status: Standing by for analysis initiation...
+            </div>
+        `,
+        btn1: "Reveal Verified Report 💡",
+        btn2: "Surprise Option 🎲",
+        react1: "Report: Your voice is statistically proven to raise atmospheric happiness ratings.",
+        react2: "Surprise: You have a rare cosmic attribute of making average routines spectacular."
+    },
+    9: {
+        subtitle: "⚡ Talents Customization",
+        title: "The Superpower Assigner",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 px-1">
+                If you could manifest one incredible talent for the rest of your 16th orbit, which would it be?
+            </p>
+        `,
+        btn1: "Beach Teleportation 🏖️",
+        btn2: "Snack Spawning 🍿",
+        react1: "Authorization successful. Packing spatial parameters for beach transit.",
+        react2: "Gourmet dimensional pantry connected directly to your location."
+    },
+    10: {
+        subtitle: "🕵️‍♀️ Hidden Architecture",
+        title: "The Golden Easter Egg",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 mb-3 px-1">
+                Rumor has it that clicking the correct option here boosts your birthday luck parameters. Let intuition lead.
+            </p>
+            <div class="flex justify-center gap-4 text-2xl sm:text-3xl">
+                <span class="egg-bounce select-none cursor-pointer" data-id="1">🥚</span>
+                <span class="egg-bounce select-none cursor-pointer" data-id="2">🥚</span>
+                <span class="egg-bounce select-none cursor-pointer" data-id="3">🥚</span>
+            </div>
+        `,
+        btn1: "Absolute Certainty 🌟",
+        btn2: "Underdog Choice 🍀",
+        react1: "Critical Hit! Your intuition metrics are flawless. Double luck activated.",
+        react2: "Plot Twist: The unexpected path triggers an overflow of immediate happiness."
+    },
+    11: {
+        subtitle: "🫙 The Preservation Vault",
+        title: "The Digital Memory Jar",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 mb-3 px-1">
+                Shake or tap the memory container below to open the key message preserved by Alvi.
+            </p>
+            <div class="flex justify-center py-1">
+                <button id="interactiveJar" class="text-5xl sm:text-6xl select-none outline-none transform transition duration-300 hover:scale-110 active:scale-95 cursor-pointer">🫙</button>
+            </div>
+        `,
+        btn1: "Tap to Unlock Memory 💎",
+        btn2: "Shake to Open Thoughts ⚡",
+        react1: "💖 You are appreciated far more than you realize.",
+        react2: "💖 You are appreciated far more than you realize."
+    },
+    12: {
+        subtitle: "✉️ The Main Archives",
+        title: "A Sincere Letter from Alvi",
+        buildHtml: () => `
+            <div class="paper-container p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#fffdf8] text-slate-800 border border-amber-100 max-h-40 sm:max-h-48 overflow-y-auto text-left leading-relaxed text-xs sm:text-sm shadow-inner custom-scrollbar font-serif">
+                Happy Birthday, Kristine! 🌸<br><br>
+                I couldn't give you a massive physically wrapped gift across this screen, so I designed and structured this digital timeline space instead.<br><br>
+                I sincerely hope this 16th milestone brings you massive waves of happiness, academic success, fantastic health, and moments you'll cherish forever.<br><br>
+                Thank you for being exactly who you are. Happy Birthday!
+            </div>
+        `,
+        btn1: "Cherish This Deeply 🥺",
+        btn2: "Read It One More Time 📜",
+        react1: "Your response is safely recorded in the core memories database.",
+        react2: "Take all the time you need. True sincerity has no expiration."
+    },
+    13: {
+        subtitle: "🤝 The Core Principles",
+        title: "Unalterable Promise #1",
+        buildHtml: () => `
+            <p class="text-slate-500 font-bold mb-3 text-[11px] sm:text-xs">We are establishing core lifetime structures. Let these be your anchor:</p>
+            <div class="p-3.5 sm:p-4 rounded-xl border-l-4 border-pink-500 bg-pink-500/10 text-sm sm:text-base md:text-lg font-bold">
+                Always try to stay happy.
+            </div>
+        `,
+        btn1: "I Promise Comfortably 🌸",
+        btn2: "Pinky Promise 🤝",
+        react1: "A wonderful promise to yourself. Keep it close to your heart.",
+        react2: "An ironclad bond. Your personal happiness is the primary priority."
+    },
+    14: {
+        subtitle: "🤝 The Core Principles",
+        title: "Unalterable Promise #2",
+        buildHtml: () => `
+            <p class="text-slate-500 font-bold mb-3 text-[11px] sm:text-xs">The second vital framework of your journey forward:</p>
+            <div class="p-3.5 sm:p-4 rounded-xl border-l-4 border-purple-500 bg-purple-500/10 text-sm sm:text-base md:text-lg font-bold">
+                Never let others define your worth.
+            </div>
+        `,
+        btn1: "Engrave This in Mind 🧠",
+        btn2: "Strict Truths Only 💯",
+        react1: "Native self-worth activated. The opinions of others fade into white noise.",
+        react2: "Precisely. Your metrics of worth are completely off the charts."
+    },
+    15: {
+        subtitle: "🤝 The Core Principles",
+        title: "Unalterable Promise #3",
+        buildHtml: () => `
+            <p class="text-slate-500 font-bold mb-3 text-[11px] sm:text-xs">The final anchor of our self-care checkpoint:</p>
+            <div class="p-3.5 sm:p-4 rounded-xl border-l-4 border-cyan-500 bg-cyan-500/10 text-sm sm:text-base md:text-lg font-bold">
+                Take care of your mental health.
+            </div>
+        `,
+        btn1: "Self-Care Queen 👑",
+        btn2: "Protect My Peace 🛡️",
+        react1: "Mental fitness is wealth. Stay vigilant at the borders of your thoughts.",
+        react2: "Your calm space is sacred. Drama has been filtered out of Chapter 16."
+    },
+    16: {
+        subtitle: "🎁 Asset Allocation",
+        title: "Trans-Global Token Voucher",
+        buildHtml: () => `
+            <p class="text-[10px] sm:text-xs text-slate-500 mb-3">A custom transaction receipt has been bound to your digital profile:</p>
+            <div class="relative p-4 rounded-xl border-2 border-dashed border-pink-400 bg-pink-400/5 overflow-hidden max-w-sm mx-auto">
+                <div class="text-sm sm:text-base font-extrabold text-pink-600 uppercase tracking-wider mb-1">Gift Voucher</div>
+                <div class="text-[11px] sm:text-xs font-bold text-slate-700 dark:text-slate-200">One physical surprise gift redeemable when Alvi visits the Philippines! 🇵🇭</div>
+                <div id="voucherStamp" class="absolute -right-3 -bottom-3 text-4xl sm:text-5xl opacity-20 transform rotate-12 transition duration-300">🎟️</div>
+            </div>
+        `,
+        btn1: "Save Blueprint 📸",
+        btn2: "Secure in Vault 🔒",
+        react1: "Saved! This global contract is fully recognized and binding.",
+        react2: "Encrypted with top-tier verification. Alvi cannot escape this promise!"
+    },
+    17: {
+        subtitle: "🌅 Perspective Calibration",
+        title: "The Reflection Pool",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base leading-relaxed text-slate-600 dark:text-slate-300 px-1">
+                Turning 16 is a remarkable transition bridge. Celebrate the bright experiences of your childhood while stepping courageously into your bright, limitless destiny.
+            </p>
+        `,
+        btn1: "Look Back with a Smile 😊",
+        btn2: "Step Forward Boldly 🚀",
+        react1: "Your past steps shaped a masterpiece. Look back with joy.",
+        react2: "The future is wide open and ready for your brilliant touch."
+    },
+    18: {
+        subtitle: "🌅 Perspective Calibration",
+        title: "Approaching Heart Elements",
+        buildHtml: () => `
+            <p class="text-xs sm:text-sm md:text-base leading-relaxed text-slate-600 dark:text-slate-300 px-1 font-medium">
+                The capsule systems are fully synchronized. Let's step beyond the light-hearted elements and approach the primary focal display. Are you ready?
+            </p>
+        `,
+        btn1: "Reveal Focal Display ✨",
+        btn2: "Open My Heart ❤️",
+        react1: "Calibrating focal coordinates. Opening central gallery room.",
+        react2: "Aligning deep aesthetic waveforms. Preparing core displays."
+    },
+    19: {
+        subtitle: "🌟 Focal Masterpiece",
+        title: "A Small Poem for Kristine",
+        buildHtml: () => `
+            <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-100/30 dark:bg-pink-900/10 border border-pink-400/30 max-w-sm mx-auto">
+                <p class="poem-display text-lg sm:text-2xl text-pink-800 dark:text-pink-300 leading-relaxed font-bold">
+                    "Out of all the people I have met, you became one of the few I genuinely wanted to see smile.<br><br>
+                    Not because you had to—but because seeing you happy makes the world feel a little brighter."
+                </p>
+            </div>
+        `,
+        btn1: "Hold This Warmth 💖",
+        btn2: "Lock This Forever 🔒",
+        react1: "Archived deep within the permanent sentiment registry.",
+        react2: "This simple truth remains completely active through every season."
+    },
+    20: {
+        subtitle: "🎆 The Infinite Horizon",
+        title: "Happy 16th Birthday, Kristine!",
+        buildHtml: () => `
+            <div class="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 border-2 border-pink-500 flex flex-col items-center gap-3">
+                <p class="text-xs sm:text-sm md:text-base font-extrabold leading-relaxed text-slate-800 dark:text-slate-100">
+                    Kristine, turning 16 is a monumental milestone, but the true marvel is the genuine, radiant, and wonderful individual you are every day. May this landmark year enrich your life with deep peace, authentic laughter, and the steady assurance of how profoundly you are valued. Happy Birthday! ❤️
+                </p>
+                <span class="px-3 py-1 rounded-full text-[9px] sm:text-xs font-black bg-pink-600 text-white shadow-md select-none">FROM, ALVI</span>
+            </div>
+        `,
+        btn1: "Launch Celebrations! 🎇",
+        btn2: "Replay Chronicle 🔄",
+        react1: "UNLEASHING FULL CELEBRATORY PROTOCOLS! Look at the ambient skyline!",
+        react2: "Re-calibrating timeline metrics. Fastening seatbelts..."
+    }
+};
+</script>
+
+<script>
+const ExperienceState = {
+    currentStep: 1,
+    userName: "Kristine",
+    customTheme: "pastel",
+    reducedMotion: false,
+    typewriterEnabled: true,
+    isProcessing: false,
+    autoPlayActive: false,
+    autoPlayTimer: null,
+    achievements: [],
+
+    init() {
+        try {
+            const savedStep = localStorage.getItem('kristine_bday_step');
+            if (savedStep) {
+                const parsedStep = parseInt(savedStep, 10);
+                const totalSteps = Object.keys(SlideBlueprint).length;
+                if (!isNaN(parsedStep) && parsedStep >= 1 && parsedStep <= totalSteps) {
+                    this.currentStep = parsedStep;
+                }
+            }
+            
+            const savedName = localStorage.getItem('kristine_bday_name');
+            if (savedName) this.userName = savedName;
+
+            const savedTheme = localStorage.getItem('kristine_bday_theme');
+            if (savedTheme) this.customTheme = savedTheme;
+
+            const savedTypewriter = localStorage.getItem('kristine_bday_typewriter');
+            if (savedTypewriter !== null) this.typewriterEnabled = savedTypewriter === 'true';
+
+            const savedMotion = localStorage.getItem('kristine_bday_motion');
+            if (savedMotion !== null) this.reducedMotion = savedMotion === 'true';
+        } catch(e) {
+            console.error("Local Storage Hydration failure:", e);
+        }
+    },
+
+    save() {
+        try {
+            localStorage.setItem('kristine_bday_step', this.currentStep);
+            localStorage.setItem('kristine_bday_name', this.userName);
+            localStorage.setItem('kristine_bday_theme', this.customTheme);
+            localStorage.setItem('kristine_bday_typewriter', this.typewriterEnabled);
+            localStorage.setItem('kristine_bday_motion', this.reducedMotion);
+        } catch(e) {}
+    },
+
+    reset() {
+        this.currentStep = 1;
+        this.userName = "Kristine";
+        this.customTheme = "pastel";
+        this.autoPlayActive = false;
+        if (this.autoPlayTimer) clearInterval(this.autoPlayTimer);
+        this.save();
+    }
+};
+
+// Start Setup immediately
+ExperienceState.init();
+</script>
+
+<script>
+class CanvasAmbientEngine {
+    constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.fireworks = [];
+        this.active = true;
+        this.isFinale = false;
+        this.pool = ['🌸', '✨', '💖', '🎈', '🍰', '⭐'];
+        
+        this.resize = this.resize.bind(this);
+        this.loop = this.loop.bind(this);
+        
+        window.addEventListener('resize', this.resize);
+        this.resize();
+        this.initAmbient();
+    }
+
+    resize() {
+        // High-DPI Display Scaling Correction
+        const dpr = window.devicePixelRatio || 1;
+        this.canvas.width = window.innerWidth * dpr;
+        this.canvas.height = window.innerHeight * dpr;
+        this.ctx.scale(dpr, dpr);
+        
+        // Match responsive dimensions
+        this.canvasWidth = window.innerWidth;
+        this.canvasHeight = window.innerHeight;
+    }
+
+    initAmbient() {
+        this.particles = [];
+        // Device adaptive counts to maximize battery life on mobile
+        const maxParticles = this.canvasWidth < 640 ? 12 : 24;
+        for (let i = 0; i < maxParticles; i++) {
+            this.particles.push(this.createParticle(true));
+        }
+    }
+
+    createParticle(isAmbient = false) {
+        return {
+            x: Math.random() * this.canvasWidth,
+            y: isAmbient ? Math.random() * this.canvasHeight : this.canvasHeight + 20,
+            char: this.pool[Math.floor(Math.random() * this.pool.length)],
+            size: Math.random() * 8 + (this.canvasWidth < 640 ? 10 : 14),
+            speedX: (Math.random() - 0.5) * 0.6,
+            speedY: -(Math.random() * 0.4 + 0.2),
+            alpha: Math.random() * 0.6 + 0.3,
+            rotation: Math.random() * Math.PI * 2,
+            rotSpeed: (Math.random() - 0.5) * 0.015
+        };
+    }
+
+    spawnExplosion(x, y, emoji, count = 16) {
+        if (ExperienceState.reducedMotion) return;
+        // Limit on mobile for render efficiency
+        const particleCount = this.canvasWidth < 640 ? Math.min(12, count) : count;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const force = Math.random() * 3 + 1.5;
+            this.fireworks.push({
+                x: x,
+                y: y,
+                char: emoji,
+                size: Math.random() * 10 + 10,
+                speedX: Math.cos(angle) * force,
+                speedY: Math.sin(angle) * force,
+                alpha: 1,
+                decay: Math.random() * 0.025 + 0.015,
+                rotation: Math.random() * Math.PI * 2,
+                rotSpeed: (Math.random() - 0.5) * 0.05
+            });
+        }
+    }
+
+    updateAndDraw() {
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+
+        // Ambient System Rendering
+        this.particles.forEach((p, idx) => {
+            p.y += p.speedY;
+            p.x += p.speedX;
+            p.rotation += p.rotSpeed;
+
+            if (p.y < -20) {
+                this.particles[idx] = this.createParticle(false);
+            }
+
+            this.ctx.save();
+            this.ctx.globalAlpha = p.alpha;
+            this.ctx.translate(p.x, p.y);
+            this.ctx.rotate(p.rotation);
+            this.ctx.font = `${p.size}px serif`;
+            this.ctx.fillText(p.char, 0, 0);
+            this.ctx.restore();
+        });
+
+        // Firework System Rendering
+        for (let i = this.fireworks.length - 1; i >= 0; i--) {
+            const f = this.fireworks[i];
+            f.x += f.speedX;
+            f.y += f.speedY;
+            f.speedY += 0.05; // gravity
+            f.alpha -= f.decay;
+            f.rotation += f.rotSpeed;
+
+            if (f.alpha <= 0) {
+                this.fireworks.splice(i, 1);
+                continue;
+            }
+
+            this.ctx.save();
+            this.ctx.globalAlpha = Math.max(0, f.alpha);
+            this.ctx.translate(f.x, f.y);
+            this.ctx.rotate(f.rotation);
+            this.ctx.font = `${f.size}px serif`;
+            this.ctx.fillText(f.char, 0, 0);
+            this.ctx.restore();
+        }
+    }
+
+    loop() {
+        if (!this.active) return;
+        this.updateAndDraw();
+        requestAnimationFrame(this.loop);
+    }
+
+    destroy() {
+        this.active = false;
+        window.removeEventListener('resize', this.resize);
+    }
+}
+
+let AmbientEngineInstance;
+window.addEventListener('load', () => {
+    AmbientEngineInstance = new CanvasAmbientEngine('canvas-ambient');
+    AmbientEngineInstance.loop();
+});
+</script>
+
+<script>
+class TypewriterEngine {
+    constructor() {
+        this.timer = null;
+        this.isRunning = false;
+    }
+
+    type(element, htmlContent, onComplete) {
+        this.cancel();
+        
+        if (!ExperienceState.typewriterEnabled || ExperienceState.reducedMotion) {
+            element.innerHTML = htmlContent;
+            if (onComplete) onComplete();
+            return;
+        }
+
+        this.isRunning = true;
+        const temp = document.createElement('div');
+        temp.innerHTML = htmlContent;
+        
+        const nodes = Array.from(temp.childNodes);
+        element.innerHTML = '';
+        element.classList.add('typewriter-cursor');
+
+        let nodeIndex = 0;
+        let charIndex = 0;
+        let currentContainer = element;
+
+        const write = () => {
+            if (nodeIndex >= nodes.length) {
+                this.cancel();
+                element.classList.remove('typewriter-cursor');
+                if (onComplete) onComplete();
+                return;
+            }
+
+            const currentNode = nodes[nodeIndex];
+
+            if (currentNode.nodeType === Node.TEXT_NODE) {
+                if (charIndex === 0) {
+                    const textSpan = document.createElement('span');
+                    currentContainer.appendChild(textSpan);
+                    this.textDest = textSpan;
+                }
+                
+                this.textDest.textContent += currentNode.textContent.charAt(charIndex);
+                charIndex++;
+
+                if (charIndex >= currentNode.textContent.length) {
+                    nodeIndex++;
+                    charIndex = 0;
+                }
+            } else if (currentNode.nodeType === Node.ELEMENT_NODE) {
+                const elementClone = currentNode.cloneNode(false);
+                elementClone.innerHTML = '';
+                element.appendChild(elementClone);
+                
+                if (currentNode.childNodes.length > 0) {
+                    const childNodes = Array.from(currentNode.childNodes);
+                    let childCharIndex = 0;
+                    let childNodeIndex = 0;
+                    
+                    const writeChild = () => {
+                        if (childNodeIndex >= childNodes.length) {
+                            nodeIndex++;
+                            charIndex = 0;
+                            this.timer = setTimeout(write, 20);
+                            return;
+                        }
+
+                        const child = childNodes[childNodeIndex];
+                        if (child.nodeType === Node.TEXT_NODE) {
+                            elementClone.textContent += child.textContent.charAt(childCharIndex);
+                            childCharIndex++;
+                            if (childCharIndex >= child.textContent.length) {
+                                childNodeIndex++;
+                                childCharIndex = 0;
+                            }
+                        } else {
+                            elementClone.appendChild(child.cloneNode(true));
+                            childNodeIndex++;
+                        }
+                        this.timer = setTimeout(writeChild, 15);
+                    };
+                    writeChild();
+                    return; 
+                } else {
+                    nodeIndex++;
+                    charIndex = 0;
+                }
+            } else {
+                nodeIndex++;
+            }
+
+            this.timer = setTimeout(write, 15);
+        };
+
+        write();
+    }
+
+    cancel() {
+        if (this.timer) {
+            clearTimeout(this.timer);
+            this.timer = null;
+        }
+        this.isRunning = false;
+    }
+}
+
+const TextWriter = new TypewriterEngine();
+</script>
+
+<script>
+const DOM = {
+    stage: document.getElementById('slide-stage-content'),
+    feedback: document.getElementById('interaction-feedback'),
+    progress: document.getElementById('progress-indicator'),
+    counter: document.getElementById('slideCounterLabel'),
+    completion: document.getElementById('completionPercentageLabel'),
+    prevBtn: document.getElementById('prevBtn'),
+    nextBtn: document.getElementById('nextBtn'),
+    themeMenuBtn: document.getElementById('themeMenuBtn'),
+    themeDropdown: document.getElementById('themeDropdown'),
+    bgmToggle: document.getElementById('bgmToggleBtn'),
+    bgmIcon: document.getElementById('bgmIcon'),
+    accDrawerBtn: document.getElementById('accDrawerBtn'),
+    accDrawer: document.getElementById('accDrawer'),
+    closeAcc: document.getElementById('closeAccBtn'),
+    typewriterToggle: document.getElementById('typewriterToggle'),
+    motionToggle: document.getElementById('reducedMotionToggle'),
+    autoplayBtn: document.getElementById('autoplayBtn'),
+    autoplayIcon: document.getElementById('autoplayIcon'),
+    restartBtn: document.getElementById('restartBtn'),
+    card: document.getElementById('master-card')
+};
+
+function setAestheticTheme(themeName) {
+    ExperienceState.customTheme = themeName;
+    ExperienceState.save();
+
+    const root = document.documentElement;
+    if (themeName === 'pastel') {
+        root.style.setProperty('--card-bg', 'var(--card-bg-pastel)');
+        root.style.setProperty('--text-main', 'var(--text-main-pastel)');
+        root.style.setProperty('--text-muted', 'var(--text-muted-pastel)');
+        root.style.setProperty('--border-color', 'var(--border-pastel)');
+        root.style.setProperty('--glow-shadow', 'var(--glow-pastel)');
+        root.style.setProperty('--body-bg', 'var(--gradient-body-pastel)');
+        root.style.setProperty('--accent-gradient', 'var(--gradient-accent-pastel)');
+    } else if (themeName === 'cosmic') {
+        root.style.setProperty('--card-bg', 'var(--card-bg-cosmic)');
+        root.style.setProperty('--text-main', 'var(--text-main-cosmic)');
+        root.style.setProperty('--text-muted', 'var(--text-muted-cosmic)');
+        root.style.setProperty('--border-color', 'var(--border-cosmic)');
+        root.style.setProperty('--glow-shadow', 'var(--glow-cosmic)');
+        root.style.setProperty('--body-bg', 'var(--gradient-body-cosmic)');
+        root.style.setProperty('--accent-gradient', 'var(--gradient-accent-cosmic)');
+    } else if (themeName === 'rose') {
+        root.style.setProperty('--card-bg', 'var(--card-bg-rose)');
+        root.style.setProperty('--text-main', 'var(--text-main-rose)');
+        root.style.setProperty('--text-muted', 'var(--text-muted-rose)');
+        root.style.setProperty('--border-color', 'var(--border-rose)');
+        root.style.setProperty('--glow-shadow', 'var(--glow-rose)');
+        root.style.setProperty('--body-bg', 'var(--gradient-body-rose)');
+        root.style.setProperty('--accent-gradient', 'var(--gradient-accent-rose)');
+    } else if (themeName === 'dark') {
+        root.style.setProperty('--card-bg', 'var(--card-bg-dark)');
+        root.style.setProperty('--text-main', 'var(--text-main-dark)');
+        root.style.setProperty('--text-muted', 'var(--text-muted-dark)');
+        root.style.setProperty('--border-color', 'var(--border-dark)');
+        root.style.setProperty('--glow-shadow', 'var(--glow-dark)');
+        root.style.setProperty('--body-bg', 'var(--gradient-body-dark)');
+        root.style.setProperty('--accent-gradient', 'var(--gradient-accent-dark)');
+    }
+}
+
+function showFeedbackNotification(msg, duration = 3000) {
+    if (!DOM.feedback) return;
+    DOM.feedback.innerText = msg;
+    DOM.feedback.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+    DOM.feedback.classList.add('opacity-100', 'scale-100');
+    
+    if (DOM.feedbackTimeout) clearTimeout(DOM.feedbackTimeout);
+    DOM.feedbackTimeout = setTimeout(() => {
+        DOM.feedback.classList.remove('opacity-100', 'scale-100');
+        DOM.feedback.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+    }, duration);
+}
+
+function updateProgressTracking() {
+    const total = Object.keys(SlideBlueprint).length;
+    let current = ExperienceState.currentStep;
+    
+    if (isNaN(current) || current < 1 || current > total) {
+        current = 1;
+        ExperienceState.currentStep = 1;
+    }
+
+    const percentage = Math.round((current / total) * 100);
+
+    DOM.counter.innerText = `Step ${current} of ${total}`;
+    DOM.completion.innerText = `${percentage}% Complete`;
+    DOM.progress.style.width = `${percentage}%`;
+
+    DOM.prevBtn.disabled = current === 1;
+}
+
+function renderStageSlide() {
+    TextWriter.cancel();
+    
+    const total = Object.keys(SlideBlueprint).length;
+    if (isNaN(ExperienceState.currentStep) || ExperienceState.currentStep < 1 || ExperienceState.currentStep > total) {
+        ExperienceState.currentStep = 1;
+    }
+
+    const slide = SlideBlueprint[ExperienceState.currentStep];
+    if (!slide) return;
+
+    DOM.feedback.classList.remove('opacity-100', 'scale-100');
+    DOM.feedback.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+    // Build Fluid HTML Structure with optimized mobile padding and fonts
+    const htmlString = `
+        <h3 class="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1" id="slideSubtitle">${slide.subtitle}</h3>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight mb-4 sm:mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight" id="slideTitle">${slide.title}</h2>
+        <div class="mb-5 sm:mb-8 flex-grow flex flex-col justify-center w-full" id="slideMainContainer">
+            ${slide.buildHtml()}
+        </div>
+        <div class="choices-wrapper flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center max-w-md mx-auto w-full">
+            <button id="choiceBtn1" class="btn-choice px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm bg-white/55 dark:bg-white/10 hover:bg-pink-500 hover:text-white border border-black/5 dark:border-white/10 shadow-sm hover:shadow-lg hover:shadow-pink-500/20 active:translate-y-0.5 transform sm:-translate-y-0.5 transition duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 flex-1">${slide.btn1}</button>
+            <button id="choiceBtn2" class="btn-choice px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm bg-white/55 dark:bg-white/10 hover:bg-pink-500 hover:text-white border border-black/5 dark:border-white/10 shadow-sm hover:shadow-lg hover:shadow-pink-500/20 active:translate-y-0.5 transform sm:-translate-y-0.5 transition duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 flex-1">${slide.btn2}</button>
+        </div>
+    `;
+
+    DOM.stage.style.opacity = '0.3';
+    DOM.stage.style.transform = 'translateY(5px)';
+
+    setTimeout(() => {
+        DOM.stage.innerHTML = htmlString;
+        updateProgressTracking();
+        bindSlideInteractiveNodes();
+
+        DOM.stage.style.opacity = '1';
+        DOM.stage.style.transform = 'translateY(0)';
+    }, 150);
+}
+
+function processNavigationChoice(choiceId) {
+    if (ExperienceState.isProcessing) return;
+
+    const total = Object.keys(SlideBlueprint).length;
+    if (isNaN(ExperienceState.currentStep) || ExperienceState.currentStep < 1 || ExperienceState.currentStep > total) {
+        ExperienceState.reset();
+        renderStageSlide();
+        return;
+    }
+
+    const slide = SlideBlueprint[ExperienceState.currentStep];
+    if (!slide) return;
+
+    ExperienceState.isProcessing = true;
+    AudioController.playTone(440, 0.15, 'sine', 0.1);
+
+    const feedbackMsg = choiceId === 1 ? slide.react1 : slide.react2;
+    showFeedbackNotification(feedbackMsg);
+
+    if (slide.onLeave) {
+        slide.onLeave(choiceId);
+    }
+
+    // Dynamic celebration spawns based on step
+    if (ExperienceState.currentStep === 1 && AmbientEngineInstance) {
+        AmbientEngineInstance.spawnExplosion(window.innerWidth / 2, window.innerHeight / 2, '✨', 12);
+    }
+    if (ExperienceState.currentStep === 6 && choiceId === 1 && AmbientEngineInstance) {
+        AmbientEngineInstance.spawnExplosion(window.innerWidth / 2, window.innerHeight / 2, '🎉', 20);
+    }
+    if (ExperienceState.currentStep === 11 && AmbientEngineInstance) {
+        AmbientEngineInstance.spawnExplosion(window.innerWidth / 2, window.innerHeight / 2, '💖', 20);
+    }
+
+    if (ExperienceState.currentStep === 20) {
+        if (choiceId === 1) {
+            triggerGrandFinaleExplosions();
+            ExperienceState.isProcessing = false;
+            return;
+        } else {
+            ExperienceState.reset();
+            setAestheticTheme('pastel');
+            renderStageSlide();
+            ExperienceState.isProcessing = false;
+            return;
+        }
+    }
+
+    // Modern progressive transitional timeout
+    setTimeout(() => {
+        ExperienceState.currentStep++;
+        ExperienceState.save();
+        renderStageSlide();
+        ExperienceState.isProcessing = false;
+
+        if (ExperienceState.currentStep === 20) {
+            triggerGrandFinaleExplosions();
+        }
+    }, 1500);
+}
+</script>
+
+<script>
+function bindSlideInteractiveNodes() {
+    const gift = document.getElementById('interactiveGiftBtn');
+    if (gift) {
+        gift.addEventListener('click', (e) => {
+            AudioController.playUnlockSound();
+            if (AmbientEngineInstance) {
+                AmbientEngineInstance.spawnExplosion(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, '🍬', 12);
+            }
+            showFeedbackNotification("🎁 Surprise! Click 'Step Inside' below to progress!");
+        });
+    }
+
+    const vibeSlider = document.getElementById('vibeRangeSlider');
+    const vibeLabel = document.getElementById('currentVibeValue');
+    if (vibeSlider && vibeLabel) {
+        vibeSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            vibeLabel.innerText = `${val} ${val > 8 ? '(Spectacular!)' : val > 5 ? '(Good Vibes)' : '(Chillin)'}`;
+            AudioController.playTone(200 + (val * 30), 0.08, 'triangle', 0.06);
+        });
+    }
+
+    const themePills = document.querySelectorAll('.theme-select-pill');
+    themePills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+            const palette = e.target.getAttribute('data-palette');
+            setAestheticTheme(palette);
+            AudioController.playTone(523.25, 0.1, 'sine', 0.07);
+            showFeedbackNotification(`Theme shifted to ${palette.toUpperCase()} dynamics!`);
+        });
+    });
+
+    const balloon = document.getElementById('interactiveBalloon');
+    if (balloon) {
+        balloon.addEventListener('click', (e) => {
+            AudioController.playPopSound();
+            if (AmbientEngineInstance) {
+                AmbientEngineInstance.spawnExplosion(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, '🎈', 18);
+                AmbientEngineInstance.spawnExplosion(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, '✨', 8);
+            }
+            balloon.style.display = 'none';
+            showFeedbackNotification("💥 POP! Good luck modifiers increased! Click below to advance.");
+        });
+    }
+
+    const outputBox = document.getElementById('personalityOutputBox');
+    if (outputBox) {
+        outputBox.addEventListener('click', () => {
+            AudioController.playTone(330, 0.25, 'sine', 0.08);
+            outputBox.innerText = "Scanning fingerprint signature...";
+            setTimeout(() => {
+                const quotes = [
+                    "A pure, kind, and brilliant mind detected.",
+                    "Rare capability of elevating the room's energy instantly.",
+                    "An incredible sense of aesthetic vision matched with loyalty.",
+                    "100% capacity to make average moments highly memorable."
+                ];
+                outputBox.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+                AudioController.playArpeggio();
+            }, 1000);
+        });
+    }
+
+    const eggs = document.querySelectorAll('.egg-bounce');
+    eggs.forEach(egg => {
+        egg.addEventListener('click', (e) => {
+            AudioController.playTone(600, 0.1, 'triangle', 0.08);
+            if (AmbientEngineInstance) {
+                AmbientEngineInstance.spawnExplosion(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, '⭐', 12);
+            }
+            egg.innerHTML = '✨';
+            showFeedbackNotification("🥚 Tap! A critical hit of absolute happiness has been unlocked!");
+        });
+    });
+
+    const jar = document.getElementById('interactiveJar');
+    if (jar) {
+        jar.addEventListener('click', (e) => {
+            AudioController.playTone(523.25, 0.1, 'sine', 0.08);
+            jar.classList.add('animate-ping');
+            setTimeout(() => jar.classList.remove('animate-ping'), 400);
+            if (AmbientEngineInstance) {
+                AmbientEngineInstance.spawnExplosion(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, '💖', 12);
+            }
+            showFeedbackNotification("💖 Preserved message: 'You are appreciated far more than you realize.'");
+        });
+    }
+
+    const btn1 = document.getElementById('choiceBtn1');
+    const btn2 = document.getElementById('choiceBtn2');
+    if (btn1) btn1.addEventListener('click', () => processNavigationChoice(1));
+    if (btn2) btn2.addEventListener('click', () => processNavigationChoice(2));
+}
+
+let finaleTimer = null;
+function triggerGrandFinaleExplosions() {
+    AudioController.playArpeggio();
+    if (finaleTimer) clearInterval(finaleTimer);
+
+    let count = 0;
+    finaleTimer = setInterval(() => {
+        if (ExperienceState.currentStep !== 20) {
+            clearInterval(finaleTimer);
+            return;
+        }
+
+        if (AmbientEngineInstance) {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * (window.innerHeight * 0.5);
+            const emojis = ['💖', '✨', '🌸', '🎁', '🍰', '🌈', '🦄'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            AmbientEngineInstance.spawnExplosion(x, y, randomEmoji, 12);
+            AudioController.playTone(300 + (Math.random() * 400), 0.2, 'sine', 0.04);
+        }
+
+        count++;
+        if (count > 25) clearInterval(finaleTimer);
+    }, 600);
+}
+
+function bindPlatformButtons() {
+    DOM.prevBtn.addEventListener('click', () => {
+        if (ExperienceState.currentStep > 1) {
+            ExperienceState.currentStep--;
+            ExperienceState.save();
+            renderStageSlide();
+        }
+    });
+
+    DOM.nextBtn.addEventListener('click', () => {
+        const total = Object.keys(SlideBlueprint).length;
+        if (ExperienceState.currentStep < total) {
+            ExperienceState.currentStep++;
+            ExperienceState.save();
+            renderStageSlide();
+
+            if (ExperienceState.currentStep === 20) {
+                triggerGrandFinaleExplosions();
+            }
+        }
+    });
+
+    DOM.themeMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        DOM.themeDropdown.classList.toggle('hidden');
+        DOM.themeDropdown.classList.toggle('flex');
+    });
+
+    document.addEventListener('click', () => {
+        DOM.themeDropdown.classList.add('hidden');
+        DOM.themeDropdown.classList.remove('flex');
+    });
+
+    const presetButtons = DOM.themeDropdown.querySelectorAll('[data-theme]');
+    presetButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const preset = e.currentTarget.getAttribute('data-theme');
+            setAestheticTheme(preset);
+        });
+    });
+
+    DOM.bgmToggle.addEventListener('click', () => {
+        AudioController.init();
+        if (AudioController.enabled) {
+            if (AudioController.bgmInterval) {
+                AudioController.stopBGM();
+                DOM.bgmIcon.className = "fa-solid fa-volume-xmark text-slate-400";
+            } else {
+                AudioController.playBGMChords();
+                DOM.bgmIcon.className = "fa-solid fa-volume-high text-pink-600";
+            }
+        }
+    });
+
+    DOM.accDrawerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        DOM.accDrawer.classList.toggle('hidden');
+        DOM.accDrawer.classList.toggle('flex');
+    });
+
+    DOM.closeAcc.addEventListener('click', () => {
+        DOM.accDrawer.classList.add('hidden');
+        DOM.accDrawer.classList.remove('flex');
+    });
+
+    DOM.typewriterToggle.addEventListener('change', (e) => {
+        ExperienceState.typewriterEnabled = e.target.checked;
+        ExperienceState.save();
+    });
+
+    DOM.motionToggle.addEventListener('change', (e) => {
+        ExperienceState.reducedMotion = e.target.checked;
+        ExperienceState.save();
+        if (AmbientEngineInstance) {
+            AmbientEngineInstance.initAmbient();
+        }
+    });
+
+    DOM.autoplayBtn.addEventListener('click', () => {
+        ExperienceState.autoPlayActive = !ExperienceState.autoPlayActive;
+        if (ExperienceState.autoPlayActive) {
+            DOM.autoplayIcon.className = "fa-solid fa-circle-pause text-pink-600 animate-pulse";
+            showFeedbackNotification("Story auto-play active. Sit back and enjoy!");
+            
+            ExperienceState.autoPlayTimer = setInterval(() => {
+                const total = Object.keys(SlideBlueprint).length;
+                if (ExperienceState.currentStep < total) {
+                    ExperienceState.currentStep++;
+                    ExperienceState.save();
+                    renderStageSlide();
+                } else {
+                    clearInterval(ExperienceState.autoPlayTimer);
+                    ExperienceState.autoPlayActive = false;
+                    DOM.autoplayIcon.className = "fa-solid fa-circle-play text-pink-600";
+                }
+            }, 6000);
+        } else {
+            clearInterval(ExperienceState.autoPlayTimer);
+            DOM.autoplayIcon.className = "fa-solid fa-circle-play text-pink-600";
+            showFeedbackNotification("Auto-play paused.");
+        }
+    });
+
+    DOM.restartBtn.addEventListener('click', () => {
+        ExperienceState.reset();
+        setAestheticTheme('pastel');
+        renderStageSlide();
+        showFeedbackNotification("Timeline restarted. Starting from Step 1.");
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'Right') {
+            DOM.nextBtn.click();
+        } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+            DOM.prevBtn.click();
+        } else if (e.key === ' ') {
+            const btn = document.getElementById('choiceBtn1');
+            if (btn) btn.click();
+        }
+    });
+
+    // Dynamic 3D mouse card tilt (Desktop Only)
+    const cardWrapper = document.querySelector('.perspective-card-wrapper');
+    if (cardWrapper && !ExperienceState.reducedMotion) {
+        cardWrapper.addEventListener('mousemove', (e) => {
+            if (window.innerWidth < 1024) return; // Skip on mobile/tablets
+            const rect = cardWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            const tiltX = (yc - y) / 16;
+            const tiltY = (x - xc) / 16;
+
+            DOM.card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+
+        cardWrapper.addEventListener('mouseleave', () => {
+            DOM.card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        });
+    }
+
+    // Fluid Mobile Swipe gesture helpers
+    let touchstartX = 0;
+    let touchendX = 0;
+    
+    document.addEventListener('touchstart', (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        touchendX = e.changedTouches[0].screenX;
+        handleGesture();
+    }, { passive: true });
+
+    function handleGesture() {
+        if (touchendX < touchstartX - 60) {
+            DOM.nextBtn.click();
+        }
+        if (touchendX > touchstartX + 60) {
+            DOM.prevBtn.click();
+        }
+    }
+}
+
+window.addEventListener('load', () => {
+    setAestheticTheme(ExperienceState.customTheme);
+    renderStageSlide();
+    bindPlatformButtons();
+});
+</script>
+</body>
+</html>
