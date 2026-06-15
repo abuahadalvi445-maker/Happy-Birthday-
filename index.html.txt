@@ -1,0 +1,878 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kristine ✨</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary-glow: linear-gradient(135deg, #ff7eb3, #ff758c);
+    --accent-glow: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+    --card-bg: rgba(255, 255, 255, 0.45);
+    --text-main: #2d1b4e;
+    --text-muted: #624b7a;
+    --transition-speed: 0.5s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-main);
+    position: relative;
+}
+
+/* Background Canvas for Particles, Fireworks, and Hearts */
+#canvas-ambient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Master Experience Container */
+.experience-container {
+    width: min(92vw, 640px);
+    z-index: 2;
+    position: relative;
+    perspective: 1000px;
+}
+
+/* Premium Glassmorphic Card Base */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(25px) saturate(190%);
+    -webkit-backdrop-filter: blur(25px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 32px;
+    padding: 40px 32px;
+    box-shadow: 0 24px 70px rgba(31, 38, 135, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: transform var(--transition-speed) cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity var(--transition-speed) ease,
+                background var(--transition-speed) ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card.slide-hidden {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(0.9);
+}
+
+/* Top Progress Indicator */
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 5%;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3, #8ec5fc);
+    background-size: 200% auto;
+    border-radius: 999px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: shineProgress 3s linear infinite;
+}
+
+@keyframes shineProgress {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Typography & Content Layout */
+h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #43165f 0%, #a8265a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 24px;
+}
+
+/* Interactive Choices/Buttons Layout */
+.choices-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+@media(min-width: 480px) {
+    .choices-wrapper {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.btn-choice {
+    border: none;
+    padding: 16px 28px;
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-choice:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(255, 117, 140, 0.2);
+    border-color: rgba(255, 117, 140, 0.4);
+}
+
+.btn-choice:active {
+    transform: translateY(-1px);
+}
+
+/* Specific Interactive Elements */
+.input-premium {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.4);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 600;
+    outline: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.input-premium:focus {
+    background: rgba(255,255,255,0.8);
+    border-color: #ff758c;
+    box-shadow: 0 0 15px rgba(255,117,140,0.2);
+}
+
+.gift-box {
+    font-size: 100px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: floatGift 3s ease-in-out infinite;
+}
+
+.gift-box:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+@keyframes floatGift {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+/* Beautiful Styling for Preserved Letter & Poem Elements */
+.paper-container {
+    text-align: left;
+    background: rgba(255, 253, 248, 0.85);
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid rgba(238, 238, 238, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02), 0 8px 24px rgba(0,0,0,0.04);
+    max-height: 260px;
+    overflow-y: auto;
+    margin: 15px 0;
+}
+
+.poem-display {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #4a2840;
+    text-align: center;
+    white-space: pre-line;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+/* Beautiful Styling for Preserved Promises */
+.promise-card {
+    margin: 16px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 244, 247, 0.9), rgba(255, 230, 238, 0.9));
+    border-radius: 20px;
+    border-left: 5px solid #ff758c;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(255,117,140,0.06);
+    transform: translateZ(10px);
+}
+
+/* Interactive Memory Jar Dynamic Textures */
+.jar-element {
+    font-size: 75px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.jar-element.bumped {
+    transform: scale(1.25) rotate(12deg);
+}
+
+/* Inline Dynamic Response Box */
+.reaction-overlay {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #b03060;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.reaction-overlay.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Score/Tracker display for challenges */
+.mini-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    border: 1px solid rgba(255,255,255,0.6);
+}
+</style>
+</head>
+<body>
+
+<canvas id="canvas-ambient"></canvas>
+
+<div class="experience-container">
+    <div id="master-card" class="card">
+        <div class="progress-bar-container">
+            <div id="progress-indicator" class="progress-fill"></div>
+        </div>
+        <div id="slide-stage-content">
+            </div>
+        <div id="interaction-feedback" class="reaction-overlay"></div>
+    </div>
+</div>
+
+<script>
+// State Management Engine
+let currentStep = 1;
+let userName = "Kristine";
+let customAesthetic = "pastel";
+let userScore = 0;
+
+// Content Database Architecture (20 Handcrafted Immersive Slides)
+const experienceMap = {
+    1: {
+        subtitle: "🌸 Adventure Begins",
+        title: "A Sweet 16 Digital Milestone",
+        html: () => `
+            <div class="gift-box" onclick="triggerTapReaction('🎁 Pop! Unlocking the portal... Click a choice below to enter!', true)">🎁</div>
+            <p>Welcome to a highly personalized interactive journey crafted entirely for you. Tap the gift or choose an entry gate below.</p>
+        `,
+        btn1: "Step Inside ✨",
+        btn2: "I'm Ready 🚀",
+        react1: "Welcome, Your Highness! Let the adventure unfold.",
+        react2: "Buckle up! This is not your average birthday card."
+    },
+    2: {
+        subtitle: "🔐 Access Validation",
+        title: "Before We Begin...",
+        html: () => `
+            <p>Please type your name to calibrate the emotional resonance frequency of this capsule:</p>
+            <input type="text" id="nameInput" class="input-premium" value="${userName}" placeholder="Enter your name..." autocomplete="off">
+            <p style="font-size:0.85rem; opacity:0.8;">(Yes, it defaults to you, but feel free to re-type it to make it official!)</p>
+        `,
+        btn1: "Confirm Identity 👑",
+        btn2: "Claim Birthday Magic 🍰",
+        react1: "Identity verified! Preparing custom environment variables.",
+        react2: "Access granted! Birthday Protocol 16 is now active.",
+        onLeave: () => {
+            const input = document.getElementById('nameInput');
+            if(input && input.value.trim() !== "") {
+                userName = input.value.trim();
+            }
+        }
+    },
+    3: {
+        subtitle: "⚡ Aura Calibration",
+        title: "The Official Vibe Check",
+        html: () => `
+            <p>How is your celebration energy profiling today on a scale of 1 to 10?</p>
+            <div class="mini-badge">System Status: Testing Mood Frequencies</div>
+        `,
+        btn1: "11/10 Absolute Hype! 🎸",
+        btn2: "1000/10 Unstoppable Queen 💅",
+        react1: "Excellent! Overclocking the systems to keep up with your vibe.",
+        react2: "That's what we like to hear! Infusing maximum sparkles into the UI."
+    },
+    4: {
+        subtitle: "🔮 Temporal Anomalies",
+        title: "The Legend of Sweet 16",
+        html: () => `
+            <p>According to ancient cosmic rules, turning 16 instantly multiplies your capacity to conquer the universe by 200%. It also gives you temporary immunity from minor chores.</p>
+        `,
+        btn1: "Activate Immunity 🛡️",
+        btn2: "Demand Cake Instead 🎂",
+        react1: "Immunity activated! (Note: This might not work on your parents. Use with caution.)",
+        react2: "Cake algorithm loaded. Virtual confectionery arriving shortly."
+    },
+    5: {
+        subtitle: "🎨 Environmental Matrix",
+        title: "Choose Your Aesthetic",
+        html: () => `
+            <p>Let's personalize the background lighting dynamics. Which color palette speaks to your current vibe?</p>
+        `,
+        btn1: "Rose Gold Fantasy 🌸",
+        btn2: "Ethereal Cosmic Glow 🔮",
+        react1: "Aesthetic set to Rose Gold Fantasy! Shifting color spectrums.",
+        react2: "Aesthetic set to Cosmic Glow! Elevating spatial ambient values.",
+        onLeave: (choice) => {
+            customAesthetic = choice === 1 ? 'pastel' : 'cosmic';
+            document.body.style.background = choice === 1 
+                ? 'linear-gradient(135deg, #fff0f5 0%, #ffd1dc 100%)'
+                : 'linear-gradient(135deg, #2e0854 0%, #1a0033 100%)';
+            if(choice === 2) {
+                document.documentElement.style.setProperty('--card-bg', 'rgba(26, 11, 46, 0.65)');
+                document.documentElement.style.setProperty('--text-main', '#f3e8ff');
+                document.documentElement.style.setProperty('--text-muted', '#c084fc');
+            } else {
+                document.documentElement.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.45)');
+                document.documentElement.style.setProperty('--text-main', '#2d1b4e');
+                document.documentElement.style.setProperty('--text-muted', '#624b7a');
+            }
+        }
+    },
+    6: {
+        subtitle: "🎯 Reflex Intercept",
+        title: "The Birthday Balloon Event",
+        html: () => `
+            <p>A stray celebration entity has appeared in the middle of your screen!</p>
+            <div style="font-size: 50px; margin: 10px 0; animation: floatGift 1.5s ease-in-out infinite;">🎈</div>
+        `,
+        btn1: "Pop It For Good Luck! 💥",
+        btn2: "Hug It Safely! 🤗",
+        react1: "POP! A shower of good fortune and virtual confetti rains down on you!",
+        react2: "The balloon giggles. Your wholesome choice increases internal joy metrics."
+    },
+    7: {
+        subtitle: "📊 Statistical Metrics",
+        title: "Unrivaled Timeline Realities",
+        html: () => `
+            <p>Let's look at the absolute data. At 16 years old, you have officially completed approximately:</p>
+            <div class="paper-container" style="text-align: center; font-weight: 700;">
+                ✨ 5,844 Days of Awesomeness<br>
+                ✨ 140,256 Hours of Being Spectacular<br>
+                ✨ Countless smiles inspired across the globe
+            </div>
+        `,
+        btn1: "Wow, I am a legend! 🦖",
+        btn2: "Keep the metrics coming! 📈",
+        react1: "Correct. A living legend status has been assigned to your profile.",
+        react2: "Data analysis confirms you are accelerating in excellence every single hour."
+    },
+    8: {
+        subtitle: "🔮 Objective Matrix",
+        title: "Certified Fact Generator",
+        html: () => `
+            <p>Our sophisticated deep-learning algorithm has analyzed your personality vectors. Click below to see the verified report.</p>
+        `,
+        btn1: "Generate Certified Truth 💡",
+        btn2: "Surprise Me Instead 🎲",
+        react1: "Result: Your laughter is scientifically proven to improve the mood of anyone within a 5-mile radius.",
+        react2: "Surprise: You have a rare superpower of making ordinary moments feel incredibly memorable."
+    },
+    9: {
+        subtitle: "⚡ Future Speculation",
+        title: "The Power Assignment",
+        html: () => `
+            <p>If you could instantly manifest one specialized skill for the rest of your 16th year, what are you picking?</p>
+        `,
+        btn1: "Instant Teleportation to Beaches 🏖️",
+        btn2: "Infinite Premium Snack Spawning 🍿",
+        react1: "Granted. Pack your digital bags, you are traveling at the speed of thought.",
+        react2: "Granted. A pocket-dimension cupboard full of luxury gourmet treats has been wired to you."
+    },
+    10: {
+        subtitle: "🕵️‍♀️ Hidden Architecture",
+        title: "The Easter Egg Checkpoint",
+        html: () => `
+            <p>There is a rumor that clicking the right option here unlocks a secret layer of birthday luck. Let your intuition guide your hand.</p>
+        `,
+        btn1: "Choose with Absolute Certainty 🌟",
+        btn2: "Pick the Underdog Option 🍀",
+        react1: "Easter Egg Found: Your intuition is perfect. Double good luck modifiers applied!",
+        react2: "Plot Twist: The underdog choice triggers a critical hit of absolute happiness!"
+    },
+    11: {
+        subtitle: "🫙 The Preservation Vault",
+        title: "The Upgraded Memory Jar",
+        html: () => `
+            <p>Tap or shake the pristine digital container below to reveal the primary core message stored by Alvi.</p>
+            <div id="jar-target" class="jar-element" onclick="animateJar()">🫙</div>
+        `,
+        btn1: "Tap To Release Thoughts 💎",
+        btn2: "Shake To Unleash Emotion ⚡",
+        react1: "💖 You are appreciated more than you know.",
+        react2: "💖 You are appreciated more than you know."
+    },
+    12: {
+        subtitle: "✉️ The Main Archives",
+        title: "A Sincere Letter From Alvi",
+        html: () => `
+            <div class="paper-container">
+            Happy Birthday! I couldn't give you a huge gift, so I made this instead.
+            I hope this year brings you happiness, success, health, and amazing memories.
+            Thank you for being yourself.
+            </div>
+        `,
+        btn1: "Cherish This Deeply 🥺",
+        btn2: "Read It One More Time 📜",
+        react1: "Every word is authentic. Preserving this in the permanent memory banks.",
+        react2: "Take all the time you need. True appreciation has no expiration date."
+    },
+    13: {
+        subtitle: "🤝 Relational Covenant",
+        title: "The Core Commitments: Promise #1",
+        html: () => `
+            <p>We are now opening the vault of foundational principles. Let these stick with you always.</p>
+            <div class="promise-card">Always try to stay happy.</div>
+        `,
+        btn1: "I Promise Comfortably 🌸",
+        btn2: "Pinky Promise with Authority 🤝",
+        react1: "A beautiful commitment to your own well-being. Lock it in.",
+        react2: "The strongest bond possible. Your happiness is paramount."
+    },
+    14: {
+        subtitle: "🤝 Relational Covenant",
+        title: "The Core Commitments: Promise #2",
+        html: () => `
+            <p>The next unalterable rule of your journey moving forward into this magnificent year:</p>
+            <div class="promise-card">Never let others define your worth.</div>
+        `,
+        btn1: "Engrave This in My Mind ✨",
+        btn2: "Absolute Facts Only 💯",
+        react1: "Your value is native and internal. Never let outside opinions cloud that reality.",
+        react2: "Exactly. You write your own worth metrics, and they are off the charts."
+    },
+    15: {
+        subtitle: "🤝 Relational Covenant",
+        title: "The Core Commitments: Promise #3",
+        html: () => `
+            <p>The final pillar of our core preservation checkpoint. Prioritize this above everything else:</p>
+            <div class="promise-card">Take care of your mental health.</div>
+        `,
+        btn1: "Self-Care Queen Mode: Active 🧠",
+        btn2: "I Will Protect My Peace 👑",
+        react1: "Mental health is wealth. Stand guard at the gates of your mind.",
+        react2: "Your peace is sacred. No drama allowed in your 16th chapter."
+    },
+    16: {
+        subtitle: "🎁 Asset Allocation",
+        title: "The Trans-Global Secret Voucher",
+        html: () => `
+            <p>A special transactional asset has been generated and appended to your birthday profile:</p>
+            <div class="promise-card" style="border-left-color: #8ec5fc; background: rgba(240,248,255,0.9); text-align: center;">
+                One future gift redeemable when Alvi visits the Philippines 😆
+            </div>
+        `,
+        btn1: "Screenshot This as Cold Proof 📸",
+        btn2: "Lock It in the Vault! 🔒",
+        react1: "Receipt generated! This contract is permanently binding.",
+        react2: "Secured with maximum digital encryption. Alvi cannot escape this promise!"
+    },
+    17: {
+        subtitle: "🌅 Perspective Shift",
+        title: "The Reflection Pool",
+        html: () => `
+            <p>Turning 16 is a stunning transitional bridge. It's an opportunity to celebrate the beautiful milestones of your childhood while stepping confidently into your brilliant destiny.</p>
+        `,
+        btn1: "Look Back with a Smile 🌸",
+        btn2: "Look Forward with Boldness 🚀",
+        react1: "Your journey so far has been incredible. Every single memory shaped a masterpiece.",
+        react2: "The future is wide open, brightly lit, and waiting for you to leave your mark."
+    },
+    18: {
+        subtitle: "🌌 Atmospheric Build-up",
+        title: "Approaching the Heart of the System",
+        html: () => `
+            <p>The system background is stabilizing. The superficial jokes are clear. We are entering the space of pure, focused expression. Are you ready?</p>
+        `,
+        btn1: "Reveal the Focus ✨",
+        btn2: "Open My Heart ❤️",
+        react1: "Calibrating elegant text displays. Let's step into the core room.",
+        react2: "Aligning deep emotional waves. Preparing the central display."
+    },
+    19: {
+        subtitle: "🌟 Elegant Masterpiece Focus",
+        title: "A Small Poem for Kristine",
+        html: () => `
+            <div class="paper-container" style="max-height: 400px; background: rgba(255,255,255,0.95);">
+                <div class="poem-display">Out of all the people I have met, you became one of the few I genuinely wanted to see smile.
+
+Not because you had to—but because seeing you happy makes the world feel a little brighter.</div>
+            </div>
+        `,
+        btn1: "Cherish this Forever 💖",
+        btn2: "Hold onto the Warmth 🔒",
+        react1: "Stored deep within the permanent heart files.",
+        react2: "This truth remains constant through every passing year."
+    },
+    20: {
+        subtitle: "🎆 The Ultimate Horizon",
+        title: "Happy 16th Birthday, Kristine!",
+        html: () => `
+            <div class="paper-container" style="background: rgba(255, 240, 245, 0.95); border: 2px solid #ff758c;">
+                <p style="font-weight: 700; line-height: 1.7; font-size: 1.1rem; color: #401020; margin: 0; text-align: center;">
+                    Kristine, turning 16 is a monumental milestone, but the true marvel is the genuine, radiant, and wonderful individual you are every day. May this landmark year enrich your life with deep peace, authentic laughter, and the steady assurance of how profoundly you are valued and celebrated by those around you. Happy Birthday! ❤️
+                </p>
+            </div>
+            <div class="mini-badge" style="background:#ff758c; color:white; border:none; padding:8px 18px;">From, Alvi</div>
+        `,
+        btn1: "Ignite Grand Celebration Sequence! 🎇",
+        btn2: "Relive the Journey from the Start 🔄",
+        react1: "UNLEASHING FULL CELEBRATION PROTOCOLS! Look at the sky!",
+        react2: "Rewinding the timeline capsule... get ready!"
+    }
+};
+
+// Global Interactive Reaction Trigger Helper
+window.triggerTapReaction = function(msg, isJar = false) {
+    const feedback = document.getElementById('interaction-feedback');
+    if(feedback) {
+        feedback.innerText = msg;
+        feedback.classList.add('active');
+    }
+    if(isJar) {
+        const jar = document.getElementById('jar-target');
+        if(jar) {
+            jar.classList.add('bumped');
+            setTimeout(() => jar.classList.remove('bumped'), 4000);
+        }
+    }
+}
+
+window.animateJar = function() {
+    triggerTapReaction("💖 You are appreciated more than you know.", true);
+}
+
+// Master Render Engine Architecture
+function assembleSlide() {
+    const slideData = experienceMap[currentStep];
+    const stage = document.getElementById('slide-stage-content');
+    const feedback = document.getElementById('interaction-feedback');
+    
+    // Reset feedback text box state
+    feedback.classList.remove('active');
+    
+    // UI Out-Animation Phase
+    stage.style.opacity = '0';
+    stage.style.transform = 'translateY(-10px)';
+    
+    setTimeout(() => {
+        // Construct and Inject Content HTML
+        let output = `
+            <h3>${slideData.subtitle}</h3>
+            <h2>${slideData.title}</h2>
+            ${slideData.html()}
+            <div class="choices-wrapper">
+                <button class="btn-choice" onclick="processChoice(1)">${slideData.btn1}</button>
+                <button class="btn-choice" onclick="processChoice(2)">${slideData.btn2}</button>
+            </div>
+        `;
+        
+        stage.innerHTML = output;
+        
+        // Update Progress bar parameters
+        const totalSlides = Object.keys(experienceMap).length;
+        const widthPercentage = (currentStep / totalSlides) * 100;
+        document.getElementById('progress-indicator').style.width = `${widthPercentage}%`;
+        
+        // UI In-Animation Phase
+        stage.style.transition = 'all 0.4s ease';
+        stage.style.opacity = '1';
+        stage.style.transform = 'translateY(0)';
+    }, 200);
+}
+
+// Handle Choice Execution & Advanced Logic Paths
+window.processChoice = function(choiceId) {
+    const slideData = experienceMap[currentStep];
+    const reactionText = choiceId === 1 ? slideData.react1 : slideData.react2;
+    
+    // Display targeted unique action text
+    triggerTapReaction(reactionText);
+    
+    // Execute slide-specific cleanup callbacks if defined
+    if (slideData.onLeave) {
+        slideData.onLeave(choiceId);
+    }
+    
+    // Special high-tier celebrations logic
+    if (currentStep === 6 && choiceId === 1) {
+        spawnInstantExplosion('🎉');
+    }
+    if (currentStep === 11) {
+        spawnInstantExplosion('💖');
+    }
+    
+    // Lock controls briefly for user to ingest reaction text, then advance
+    setTimeout(() => {
+        if (currentStep === 20) {
+            if (choiceId === 1) {
+                // Ignite grand finale sequence loop
+                triggerGrandFinaleExplosions();
+            } else {
+                // Loop back around gracefully to slide 1
+                currentStep = 1;
+                customAesthetic = "pastel";
+                document.body.style.background = 'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)';
+                document.documentElement.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.45)');
+                document.documentElement.style.setProperty('--text-main', '#2d1b4e');
+                document.documentElement.style.setProperty('--text-muted', '#624b7a');
+                assembleSlide();
+            }
+        } else {
+            currentStep++;
+            assembleSlide();
+            
+            // Auto trigger intense canvas assets when landing on the ultimate screen
+            if (currentStep === 20) {
+                setTimeout(() => { triggerGrandFinaleExplosions(); }, 600);
+            }
+        }
+    }, 2500);
+}
+
+/* ==========================================================================
+   HIGH-PERFORMANCE CANVAS CELEBRATION ENGINE
+   Manages beautiful ambient floating particles, stars, hearts, and fireworks
+   ========================================================================== */
+const canvas = document.getElementById('canvas-ambient');
+const ctx = canvas.getContext('2d');
+
+let particlesArray = [];
+let fireworkArray = [];
+let globalCelebrationActive = false;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Universal Particle Blueprint Class
+class CelebrationParticle {
+    constructor(x, y, char, size, speedX, speedY, color = null) {
+        this.x = x;
+        this.y = y;
+        this.char = char;
+        this.size = size;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        this.alpha = 1;
+        this.decay = Math.random() * 0.015 + 0.005;
+        this.color = color;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.05;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.rotation += this.rotSpeed;
+        if (globalCelebrationActive) {
+            this.speedY += 0.04; // Gravity simulation during finale
+            this.alpha -= this.decay;
+        } else {
+            // Soft drift upwards for ambient mode
+            if (this.y < -20) this.y = canvas.height + 20;
+        }
+    }
+    draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        if (this.color) {
+            ctx.fillStyle = this.color;
+            ctx.font = `${this.size}px serif`;
+            ctx.fillText(this.char, 0, 0);
+        } else {
+            ctx.fillStyle = customAesthetic === 'pastel' ? '#624b7a' : '#c084fc';
+            ctx.font = `${this.size}px serif`;
+            ctx.fillText(this.char, 0, 0);
+        }
+        ctx.restore();
+    }
+}
+
+// Generate base ambient movement values
+function initAmbientParticles() {
+    particlesArray = [];
+    const pool = ['🌸', '✨', '💖', '✨'];
+    for (let i = 0; i < 35; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let char = pool[Math.floor(Math.random() * pool.length)];
+        let size = Math.random() * 14 + 14;
+        let speedX = (Math.random() - 0.5) * 0.6;
+        let speedY = -(Math.random() * 0.5 + 0.3);
+        particlesArray.push(new CelebrationParticle(x, y, char, size, speedX, speedY));
+    }
+}
+initAmbientParticles();
+
+function spawnInstantExplosion(emoji) {
+    for (let i = 0; i < 24; i++) {
+        let angle = Math.random() * Math.PI * 2;
+        let speed = Math.random() * 5 + 2;
+        let p = new CelebrationParticle(
+            canvas.width / 2,
+            canvas.height / 2,
+            emoji,
+            Math.random() * 16 + 16,
+            Math.cos(angle) * speed,
+            Math.sin(angle) * speed
+        );
+        p.alpha = 1;
+        p.decay = 0.02;
+        fireworkArray.push(p);
+    }
+}
+
+function launchFirework() {
+    const targetX = Math.random() * canvas.width;
+    const targetY = Math.random() * (canvas.height * 0.6);
+    const colors = ['✨', '🌸', '💖', '🎉', '❤️', '🌟', '🦄'];
+    const chosenEmoji = colors[Math.floor(Math.random() * colors.length)];
+    
+    for (let i = 0; i < 30; i++) {
+        let angle = Math.random() * Math.PI * 2;
+        let speed = Math.random() * 6 + 1;
+        let p = new CelebrationParticle(
+            targetX,
+            targetY,
+            chosenEmoji,
+            Math.random() * 18 + 14,
+            Math.cos(angle) * speed,
+            Math.sin(angle) * speed
+        );
+        fireworkArray.push(p);
+    }
+}
+
+let finaleInterval;
+function triggerGrandFinaleExplosions() {
+    globalCelebrationActive = true;
+    launchFirework();
+    launchFirework();
+    
+    if (finaleInterval) clearInterval(finaleInterval);
+    finaleInterval = setInterval(() => {
+        if (currentStep === 20 && globalCelebrationActive) {
+            launchFirework();
+        } else {
+            clearInterval(finaleInterval);
+            globalCelebrationActive = false;
+        }
+    }, 700);
+}
+
+// Master RequestAnimationFrame Loop Matrix
+function renderEngineLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw Ambient Layer
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+    }
+    
+    // Draw Active Burst/Explosion Layer
+    for (let i = fireworkArray.length - 1; i >= 0; i--) {
+        fireworkArray[i].update();
+        fireworkArray[i].draw();
+        if (fireworkArray[i].alpha <= 0) {
+            fireworkArray.splice(i, 1);
+        }
+    }
+    
+    requestAnimationFrame(renderEngineLoop);
+}
+requestAnimationFrame(renderEngineLoop);
+
+// Initialize System Boot sequences
+assembleSlide();
+</script>
+
+</body>
+</html>
